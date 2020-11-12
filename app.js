@@ -14,7 +14,7 @@
   const videoOfThemEl = document.querySelector(".video-container.them video");
   const videoOfMeEl = document.querySelector(".video-container.me video");
 
-  // activate camera!
+  // activate camera
   navigator.mediaDevices
     .getUserMedia({ audio: false, video: true })
     .then((stream) => {
@@ -69,7 +69,7 @@
     },
   });
 
-  // print peer id on connection "open" event.
+  // print peer id on connection "open" event
   peer.on("open", (id) => {
     const myPeerIdEl = document.querySelector(".my-peer-id");
     myPeerIdEl.innerText = id;
@@ -98,7 +98,7 @@
     startVideoButton.classList.remove("active");
     stopVideoButton.classList.add("active");
 
-    // answering the inc call
+    // answering the incoming call
     navigator.mediaDevices
       .getUserMedia({ audio: false, video: true })
       .then((myStream) => {
@@ -205,7 +205,7 @@
     startVideoButton.classList.remove("active");
     stopVideoButton.classList.add("active");
 
-    // start video call with remote peer.
+    // start video call with remote peer
     navigator.mediaDevices
       .getUserMedia({ audio: false, video: true })
       .then((myStream) => {
@@ -218,7 +218,7 @@
         });
       });
   });
-  // event listener for click 'hang up'.
+  // event listener for click 'hang up'
   stopVideoButton.addEventListener("click", () => {
     stopVideoButton.classList.remove("active");
     startVideoButton.classList.add("active");
